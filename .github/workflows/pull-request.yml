@@ -164,7 +164,7 @@ jobs:
         # i.e. if the Event is a Merge Queue Event
         if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
         # We upload the Coverage Report so it can be used on another Workflow
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
         with:
           name: coverage-report
           path: |
@@ -185,7 +185,7 @@ jobs:
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
         if: steps.upload_coverage_report.outcome == 'success'
         # We upload the Storybook Build so it can be used on another Workflow
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
         with:
           name: storybook-build
           path: storybook-static

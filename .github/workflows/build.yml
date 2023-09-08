@@ -128,7 +128,7 @@ jobs:
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
         if: steps.analyse_build.outcome == 'success'
         # We upload the Bundle Analysis Artifact so it can be used on another Workflow
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
         with:
           name: bundle-analysis
           path: .next/analyze/__bundle_analysis.json
