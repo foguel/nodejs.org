@@ -73,7 +73,7 @@ jobs:
           fetch-depth: ${{ needs.base.outputs.fetch_depth }}
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: |
             .turbo/cache
@@ -110,7 +110,7 @@ jobs:
         # We don't need to upload a Lint Cache for Dependabot PRs and also when the GitHub Event is not a Pull Request
         # i.e. if the Event is a Merge Queue Event
         if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
-        uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: |
             .turbo/cache
@@ -130,7 +130,7 @@ jobs:
           fetch-depth: ${{ needs.base.outputs.fetch_depth }}
 
       - name: Restore Tests Cache
-        uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: |
             .turbo/cache
@@ -194,7 +194,7 @@ jobs:
         # This prevents this step from running if "Upload Storybook Build" got cancelled; Which gets cancelled if
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
         if: steps.upload_coverage_report.outcome == 'success'
-        uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: |
             .turbo/cache
