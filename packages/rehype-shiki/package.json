@@ -14,12 +14,12 @@
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
   },
   "dependencies": {
-    "@shikijs/core": "^3.8.1",
-    "@shikijs/engine-javascript": "^3.8.1",
-    "@shikijs/engine-oniguruma": "^3.8.1",
+    "@shikijs/core": "^3.9.2",
+    "@shikijs/engine-javascript": "^3.9.2",
+    "@shikijs/engine-oniguruma": "^3.9.2",
     "classnames": "catalog:",
     "hast-util-to-string": "^3.0.1",
-    "shiki": "~3.8.1",
+    "shiki": "~3.9.2",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
